@@ -1,0 +1,837 @@
+@import config
+
+body
+    &::-webkit-scrollbar
+        width: 5px
+
+    &::-webkit-scrollbar-track
+        background-color: #F1EBE8
+
+    &::-webkit-scrollbar-thumb
+        background-color: $accent
+
+.section
+    margin: 0 auto 132px
+    width: 100%
+    max-width: 1440px
+    padding: 0 200px
+    box-sizing: border-box
+    
+    &__title
+        font-size: 30px
+        line-height: 30px
+        font-weight: 500
+        letter-spacing: 0.02em
+    
+        &--underline
+            padding-bottom: 34px
+            position: relative
+        
+            &::after
+                content: ''
+                width: 54px
+                height: 3px
+                background: #000000
+                position: absolute
+                left: 0
+                bottom: 0
+        
+    @media screen and (max-width: 1700px)
+        padding-right: 150px
+        padding-left: 150px
+
+    @media screen and (max-width: 1500px)
+        padding-right: 100px
+        padding-left: 100px
+
+    @media screen and (max-width: 1400px)
+        padding-right: 70px
+        padding-left: 70px
+
+    @media screen and (max-width: 1300px)
+        padding-right: 50px
+        padding-left: 50px
+
+    @media screen and (max-width: 992px)
+        padding-right: 40px
+        padding-left: 40px
+
+    @media screen and (max-width: 768px)
+        padding-right: 25px
+        padding-left: 25px
+
+    @media screen and (max-width: 576px)
+        padding-right: 16px
+        padding-left: 16px
+
+    &__number
+        position: absolute
+        left: 0
+
+        span
+            position: relative
+            transform: rotate(-90deg)
+            display: block
+            font-family: "Open Sans", "GraphikLCG", -apple-system, BlinkMacSystemFont, Arial, sans-serif
+            font-size: 12px
+            font-weight: 600
+
+        &::before
+            content: ''
+            top: -100px
+            left: 50%
+            height: 56px
+            width: 1px
+            background: #000
+            position: absolute
+
+    
+
+.button
+    padding: 24px 32px
+    background-color: #F0EFEB
+    transition: all 0.2s
+    border: 0
+    outline: 0
+    color: #000
+    font-size: 14px
+    letter-spacing: 0.03em
+    text-align: center
+    text-transform: uppercase
+    cursor: pointer
+    position: relative
+    font-family: $gtw
+    font-weight: 600
+    display: block
+    width: 260px
+    line-height: 14px
+
+    &__arrow
+        top: 50%
+        transform: translateY(-50%)
+        right: -24px
+        position: absolute
+        transition: all 0.4s
+
+
+    &:hover
+        background-color: darken(#F0EFEB, 10%)
+
+        .button__arrow
+            transform: translateY(-50%) translateX(4px)
+
+    &:active
+        background-color: darken(#F0EFEB, 20%)
+
+.link
+    color: $accent
+    letter-spacing: 0.02em
+    transition: all 0.2s
+    font-size: 20px
+    line-height: 24px
+    position: relative
+
+    &::before
+        content: ''
+        bottom: -1px
+        left: 0
+        background-color: $accent
+        width: 100%
+        height: 1px
+        position: absolute
+        transition: all 0.2s
+
+    &:hover
+        color: #bd4915
+        &::before
+            transform: scaleX(0)
+
+    @media screen and (max-width: 1700px)
+        font-size: 18px
+
+    @media screen and (max-width: 576px)
+        font-size: 16px
+
+    @media screen and (max-width: 1700px)
+        font-size: 18px
+
+    @media screen and (max-width: 576px)
+        font-size: 16px
+
+.page
+    &__title
+        margin-bottom: 40px
+
+        @media screen and (max-width: 992px)
+            margin-bottom: 30px
+
+.header
+    padding: 74px 80px 0
+    display: flex
+    max-width: 1440px
+    justify-content: space-between
+    margin: 0 auto
+
+    &__logo
+        width: 108px
+
+        img
+            width: 100%
+
+    &__menu
+        width: 30px
+        height: 22px
+        border: 0
+        border-radius: 0
+        display: flex
+        flex-direction: column
+        justify-content: space-evenly
+        padding: 2px
+        cursor: pointer
+        background: #fff
+        transition: all 0.4s
+        position: relative
+        z-index: 3
+
+        span
+            width: 28px
+            background: #000
+            transition: all 0.4s
+            height: 2px
+
+        &:focus,
+        &:active
+            outline: 0
+
+        &.active
+            span:first-child
+                transform: translate3d(0,3px,0) rotate(225deg)
+
+            span:last-child
+                transform: translate3d(0,-3px,0) rotate(-225deg)
+
+body
+    &::after
+        transition: all 0.4s
+        content: ''
+        background: rgba(40, 40, 40, 0.15)
+        opacity: 0
+        position: absolute
+        width: 100%
+        height: 100%
+        top: 0
+        left: 0
+        z-index: 1
+        pointer-events: none
+
+    &.menu-active
+        &::after
+            opacity: 1
+
+
+.menu
+    z-index: 2
+    position: fixed
+    top: 0
+    right: 0
+    height: 100%
+    transform: translateX(100%)
+    transition: all 0.4s
+    width: 468px
+    background: #fff
+    padding: 166px 80px 84px
+
+    &.active
+        transform: translateX(0)
+
+    &__link
+        padding: 36px 0
+        text-transform: uppercase
+        font-size: 18px
+        line-height: 14px
+        display: block
+        letter-spacing: 0.03em
+
+    &__item
+        border-bottom: 1px solid rgba(178, 182, 168, 0.6)
+        transition: all 0.3s
+
+        &:hover
+            border-bottom: 1px solid rgb(136, 138, 133)
+
+        &:last-child
+            border-bottom: 0
+
+.short
+    margin-top: 108px
+    position: relative
+    margin-bottom: 100px
+
+    &__wrap
+        display: flex
+        justify-content: space-between
+
+    &__column:first-child
+        width: calc(60% - 90px)
+        display: flex
+        flex-direction: column
+
+    &__column:last-child
+        width: 40%
+
+    &__title
+        font-size: 48px
+        line-height: 56px
+        margin-bottom: 8px
+        font-family: $gtw
+        font-weight: 600
+        letter-spacing: 0.03em
+        text-transform: uppercase
+
+    &__subtitle
+        font-family: $gtw
+        font-size: 16px
+        line-height: 18px
+        letter-spacing: 0.03em
+        text-transform: uppercase
+        margin-bottom: 56px
+
+    &__target
+        font-family: $gtw
+        font-size: 28px
+        line-height: 34px
+        font-weight: 600
+        letter-spacing: 0.02em
+        text-transform: uppercase
+        margin-bottom: 72px
+        max-width: 430px
+
+    &__item
+        font-weight: 300
+        font-size: 14px
+        line-height: 12px
+        margin-bottom: 14px
+        display: flex
+
+        &::before
+            margin-top: 3px
+            content: ''
+            border-radius: 50%
+            display: inline-block
+            margin-right: 32px
+            flex-shrink: 0
+            background: #B2B6A8
+            width: 6px
+            height: 6px
+
+    .button
+        margin-top: auto
+
+
+    &__quest
+        margin-top: 76px
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        padding-top: 30px
+        position: relative
+        width: 100%
+
+        &::before
+            content: ''
+            position: absolute
+            left: 50%
+            top: 0
+            transform: translateX(-50%)
+            width: 54px
+            height: 3px
+            background: #000
+
+    &__quest-title
+        text-align: center
+        font-weight: 500
+        font-size: 30px
+        line-height: 30px
+        letter-spacing: 0.02em
+        max-width: 504px
+        margin-bottom: 34px
+        transition: all 0.4s
+        height: 66px
+        display: flex
+        align-items: center
+
+        span
+            display: none
+
+    &__quest-text
+        max-width: 472px
+        font-size: 16px
+        line-height: 28px
+        text-align: center
+
+    .section__number
+        bottom: 100px
+
+.paragraph
+    font-size: 16px
+    line-height: 22px
+    
+.what
+    position: relative
+    display: flex
+    justify-content: space-between
+    
+    
+    &__column:first-child
+        width: 460px
+        display: flex
+        
+    &__column:nth-child(2)
+        margin-left: 106px
+        width: 100%
+        position: relative
+        
+        &::after
+            position: absolute
+            bottom: 0
+            left: 0
+            content: ''
+            background: #B2B6A8
+            width: 54px
+            height: 3px
+    
+    &__title
+        margin-bottom: 24px
+        
+    &__paragraph
+        margin-bottom: 26px
+        
+        &:last-child
+            margin-bottom: 0
+            
+        b
+            font-weight: 500
+            
+    .section__number
+        bottom: 98px
+        
+.list
+    position: relative
+    
+    
+    &__items
+        display: flex
+        flex-wrap: wrap
+        
+    &__item
+        width: 100%
+        max-width: 486px
+        
+        &:nth-child(odd)
+            margin-right: 68px
+            
+        &:nth-child(1),
+        &:nth-child(2)
+            margin-bottom: 44px
+            
+    &__header
+        margin-bottom: 20px
+        font-size: 22px
+        line-height: 22px
+        font-weight: 500
+        display: flex
+        
+        &::before
+            content: ''
+            width: 7px
+            height: 14px
+            background-image: url("data:image/svg+xml,%3Csvg width='7' height='14' viewBox='0 0 7 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 14V0L7 6.5L0 14Z' fill='%23B2B6A8'/%3E%3C/svg%3E%0A")
+            display: inline-block
+            margin-right: 18px
+            background-repeat: no-repeat
+            background-position: center
+            margin-top: 4px
+    
+    &__paragraph
+        font-size: 14px
+        line-height: 20px
+        padding-left: 25px
+    
+    .section__number
+        bottom: 96px
+        
+.why
+    position: relative
+    display: flex
+    
+    
+    &__column:nth-child(2)
+        display: flex
+        width: 460px
+
+    &__column:first-child
+        width: 100%
+        margin-right: 108px
+        
+    &__title
+        margin-bottom: 54px
+    
+    &__paragraph
+        margin-bottom: 26px
+        
+        span
+            font-weight: 600
+        
+        &:last-child
+            margin-bottom: 0
+            
+    .section__number
+        bottom: 76px
+    
+
+.exp
+    position: relative
+    
+    
+    &__title
+        margin-bottom: 50px
+        
+    &__paragraph
+        font-size: 14px
+        line-height: 20px
+        margin-bottom: 32px
+        padding-left: 50px
+        position: relative
+        
+        &::before
+            content: ''
+            background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='3' cy='3' r='3' fill='%23B2B6A8'/%3E%3C/svg%3E%0A")
+            background-repeat: no-repeat
+            background-position: center
+            width: 26px
+            height: 26px
+            border: 1px solid #B2B6A8
+            border-radius: 50%
+            position: absolute
+            left: -13px
+            background-color: #ffffff
+            z-index: 2
+            top: -6px
+        
+        &:last-child
+            margin-bottom: 0
+            
+            &::after
+                width: 4px
+                content: ''
+                height: 100%
+                background: #ffffff
+                position: absolute
+                left: -2px
+                top: 0
+    
+    &__columns
+        display: flex
+        justify-content: space-between
+        
+    &__column
+        width: calc(50% - 40px)
+        position: relative
+        height: fit-content
+        
+        &::before
+            content: ''
+            position: absolute
+            height: 100%
+            width: 1px
+            left: 0
+            top: 0
+            background: #B2B6A8
+            
+    .section__number
+        bottom: 96px
+    
+.always
+    position: relative
+    display: flex
+    justify-content: space-between
+    
+    
+    &__column:first-child
+        width: 461px
+        
+    &__column:nth-child(2)
+        margin-left: 56px
+        width: 100%
+        
+    &__title
+        margin-bottom: 60px
+        padding-left: 38px
+    
+    &__item
+        font-size: 16px
+        line-height: 22px
+        margin-bottom: 28px
+        display: flex
+    
+        &::before
+            margin-top: 8px
+            content: ''
+            border-radius: 50%
+            display: inline-block
+            margin-right: 32px
+            background: #B2B6A8
+            flex-shrink: 0
+            width: 6px
+            height: 6px
+
+    .section__number
+        bottom: 170px
+
+.how
+    position: relative
+    
+    &__title
+        margin-bottom: 70px
+        
+    &__items
+        display: flex
+        flex-wrap: wrap
+        justify-content: space-between
+        
+    &__item
+        display: flex
+        align-items: center
+        margin-bottom: 100px
+        width: calc(50% - 28px)
+        
+        &:nth-child(3),
+        &:nth-child(4)
+            margin-bottom: 0
+        
+    &__img
+        width: 70px
+        margin-right: 40px
+        
+        img
+            width: 100%
+            
+    &__text
+        line-height: 22px
+        max-width: 312px
+
+    .section__number
+        bottom: 92px
+
+.reviews
+    margin-bottom: 110px
+    position: relative
+    
+    &__title
+        margin-bottom: 50px
+        
+    &__content
+        padding: 30px 52px 40px
+        border: 1px solid #B2B6A8
+        max-width: 734px
+        margin: 0 auto
+        position: relative
+        z-index: 1
+        background: #ffffff
+        
+    &__img-wrap
+        display: flex
+        position: absolute
+        left: 50%
+        transform: translateX(-50%)
+        top: 1px
+        width: 132px
+        height: 132px
+        padding: 8px
+        background: #ffffff
+        border-radius: 50%
+        z-index: 2
+
+        img
+            width: 100%
+            height: 100%
+            object-fit: cover
+            border-radius: 50%
+            
+    &__img
+        &::before
+            content: ''
+            
+    &__img-border
+        width: 134px
+        height: 134px
+        border: 1px solid #B2B6A8
+        border-radius: 50%
+        position: absolute
+        z-index: 0
+        top: 0
+        left: 50%
+        transform: translateX(-50%)
+        
+    &__name
+        font-weight: 600
+        width: 100%
+        text-align: center
+        margin-bottom: 12px
+        
+    &__spec
+        width: 100%
+        text-align: center
+        font-size: 14px
+        margin-bottom: 26px
+        
+    &__text
+        line-height: 22px
+        
+    &__slide
+        padding-top: 110px
+        position: relative
+    
+    &__buttons
+        display: flex
+        margin: 0 auto
+        width: fit-content
+        
+    &__prev,
+    &__next
+        position: relative
+        left: 0
+        top: 0
+        bottom: 0
+        right: 0
+        margin-top: 0
+        cursor: pointer
+        width: 42px
+        opacity: 1
+        
+        path
+            fill: #000
+        
+        &:focus,
+        &:active
+            outline: 0
+        
+        &::after
+            content: ''
+            
+    &__next
+        margin-left: 20px
+        transform: rotate(180deg)
+        
+        
+    &__pagination
+        position: relative
+        bottom: 0
+        
+    .swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet
+        margin: 0 16px
+        
+    .swiper-pagination-bullet
+        width: 6px
+        height: 6px
+        background: #ffffff
+        border: 1px solid #C4C4C4
+        opacity: 1
+        
+    .swiper-pagination-bullet-active
+        background: #c4c4c4
+        
+    .section__number
+        bottom: 90px
+    
+.bb
+    margin-bottom: 78px
+    
+    &__button
+        margin: 0 auto
+
+        
+.footer
+    background: #B2B6A8
+    
+    &__wrap
+        max-width: 1440px
+        margin: 0 auto
+        padding: 100px 80px 34px
+        position: relative
+        
+    &__row
+        display: flex
+        
+    &__list,
+    &__socials
+        margin-right: 120px
+        
+    &__socials
+        display: flex
+        
+    &__social
+        &:nth-child(2)
+            margin-left: 16px
+            a
+                padding-bottom: 0
+                padding-top: 6px
+                
+    
+    
+    &__social-link
+        width: 24px
+        height: 24px
+        background: #ffffff
+        padding: 3px
+        display: flex
+        align-items: center
+        justify-content: center
+        
+        svg
+            width: 100%
+            height: 100%
+        
+    &__item
+        text-transform: uppercase
+        margin-bottom: 24px
+        font-size: 14px
+        line-height: 17px
+        font-weight: 600
+        letter-spacing: 0.02em
+        font-family: $gtw
+        color: #ffffff
+        
+    
+        &:last-child
+            margin-bottom: 0
+            
+    &__rights
+        margin-left: auto
+        color: #ffffff
+        margin-top: 58px
+        font-size: 12px
+        line-height: 12px
+        width: fit-content
+        font-weight: 500
+        
+    &__up
+        position: absolute
+        top: 40px
+        right: 76px
+        display: flex
+        align-items: center
+        cursor: pointer
+        
+    &__up-icon
+        display: flex
+        
+    &__up-text
+        color: #ffffff
+        font-weight: 500
+        font-size: 14px
+        line-height: 14px
+        margin-left: 16px
+        
+    

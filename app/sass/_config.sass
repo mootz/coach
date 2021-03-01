@@ -1,0 +1,85 @@
+// USER VARIABLES SECTION
+
+$accent: #F0EFEB // Accent Color
+$fontsize: 16px // Body Font Size
+$textcolor: #000000 // Text Color
+$bordercolor: #959E9F
+$system: -apple-system, BlinkMacSystemFont, Arial, sans-serif // System Font Family
+$glcg: 'GraphikLCG', -apple-system, BlinkMacSystemFont, Arial, sans-serif // GraphikLCG Font Family
+$gtw: 'GTWalsheimPro', -apple-system, BlinkMacSystemFont, Arial, sans-serif // Manrope Font Family
+
+
+// Bootstrap compatible gutter variable => $gutter
+// $grid-gutter-width: 20px
+// $gutter: $grid-gutter-width
+
+// IMPORT SECTION
+
+// @import 'node_modules/bootstrap/scss/bootstrap-reboot.scss' // Bootstrap Reboot collection
+// @import 'node_modules/bootstrap/scss/mixins/_breakpoints.scss' // Bootstrap Breakpoints mixin
+// @import 'node_modules/bootstrap/scss/bootstrap-grid.scss' // Optional Bootstrap Grid
+// @import 'node_modules/bootstrap/scss/utilities/_sizing.scss' // Optional Bootstrap Utilites
+
+// FONTS LOAD SECTION
+
+@mixin font($fname, $fstyle, $fweight, $furl)
+    @font-face
+        font-family: $fname
+        font-style: $fstyle
+        font-weight: $fweight
+        font-display: swap // Uncomment to initially display system fonts
+        src: local($fname), url($furl) format('woff2')
+
+@include font('GTWalsheimPro', normal, 300, '../fonts/GTWalsheimPro/GTWalsheimPro-Light.woff2')
+@include font('GTWalsheimPro', normal, 600, '../fonts/GTWalsheimPro/GTWalsheimPro-Medium.woff2')
+@include font('GraphikLCG', normal, 300, '../fonts/GraphikLCG/GraphikLCG-Light.woff2')
+@include font('GraphikLCG', normal, 400, '../fonts/GraphikLCG/GraphikLCG-Regular.woff2')
+@include font('GraphikLCG', normal, 500, '../fonts/GraphikLCG/GraphikLCG-Medium.woff2')
+@include font('GraphikLCG', normal, 600, '../fonts/GraphikLCG/GraphikLCG-Semibold.woff2')
+
+// GENERAL DOCUMENT STYLES
+
+::placeholder
+    color: #666
+
+::selection
+    background-color: $accent
+    color: #000
+
+input, textarea
+    outline: none
+    &:focus:required:invalid
+        border-color: red
+    &:required:valid
+        border-color: green
+
+body
+    font-family: $glcg
+    font-size: $fontsize
+    min-width: 320px
+    position: relative
+    line-height: 24px
+    overflow-x: hidden
+    color: $textcolor
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+
+a
+    text-decoration: none
+    color: currentColor
+
+    &:active
+        outline: none
+
+p
+    margin: 0
+
+h1,h2,h3,h4,h5
+    margin: 0
+
+ul
+    list-style: none
+    padding: 0
+    margin: 0
+
+*
+    box-sizing: border-box
