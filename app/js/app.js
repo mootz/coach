@@ -48,4 +48,28 @@ $(document).ready(function () {
         window.scrollTo({top: 0, behavior: 'smooth'});
     })
 
+    $('.f-modal__input').inputmask({
+        mask: '+7 (999) 999-99-99',
+        showMaskOnHover: false,
+        placeholder: '  ',
+    });
+
+    $.fancybox.defaults.animationEffect = 'fade';
+    $.fancybox.defaults.touch = false;
+
+    let windowRelativeBottom = document.documentElement.getBoundingClientRect().bottom;
+
+    if (windowRelativeBottom < document.documentElement.clientHeight + 100) {
+        // добавим больше данных
+        console.log('holdReady');
+    }
+    console.log($('.reviews__slide').offset());
+
+    window.addEventListener('scroll', function() {
+        console.log('scroll');
+        if ($('.reviews__slide').offset().top < window.pageYOffset) {
+
+        }
+    })
+
 });
