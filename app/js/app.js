@@ -57,19 +57,38 @@ $(document).ready(function () {
     $.fancybox.defaults.animationEffect = 'fade';
     $.fancybox.defaults.touch = false;
 
-    let windowRelativeBottom = document.documentElement.getBoundingClientRect().bottom;
-
-    if (windowRelativeBottom < document.documentElement.clientHeight + 100) {
-        // добавим больше данных
-        console.log('holdReady');
-    }
-    console.log($('.reviews__slide').offset());
+    let setModalShow = true;
 
     window.addEventListener('scroll', function() {
         console.log('scroll');
-        if ($('.reviews__slide').offset().top < window.pageYOffset) {
+        if (($('.reviews__slide').offset().top < window.pageYOffset) && !setModalShow) {
+            setTimeout(function() {
+                document.querySelector('.link-modal-email').click();
+                setModalShow = true;
+            }, 5000)
 
         }
     })
+
+    if (window.matchMedia('max-width: 576px').media) {
+        let listHeaders = document.querySelectorAll('.list__header');
+
+        listHeaders.forEach((e) => {
+            e.addEventListener('click', function() {
+                let nextItem = e.nextElementSibling;
+
+
+                if (!nextItem.classList.contains('active')) {
+                    nextItem.style.height = `${nextItem.scrollHeight}px`
+                    nextItem.classList.toggle('active')
+                    e.classList.toggle('active')
+                } else {
+                    nextItem.style.height = `0`
+                    nextItem.classList.toggle('active')
+                    e.classList.toggle('active')
+                }
+            })
+        })
+    }
 
 });
