@@ -2,11 +2,21 @@ $(document).ready(function () {
     let menuButton = document.querySelector('.header__menu');
     let menu = document.querySelector('.menu');
     let body = document.querySelector('body');
+    let menuLinks = document.querySelectorAll('.menu__link')
+
     menuButton.addEventListener('click', function() {
         this.classList.toggle('active');
         menu.classList.toggle('active');
         body.classList.toggle('menu-active');
     });
+
+    menuLinks.forEach(e => {
+        e.addEventListener('click', function() {
+            menuButton.classList.toggle('active');
+            menu.classList.toggle('active');
+            body.classList.toggle('menu-active');
+        })
+    })
 
     $('.short__quest-title span').eq(0).addClass('active').fadeIn(1000);
 
@@ -31,15 +41,22 @@ $(document).ready(function () {
         slidesPerView: 1,
 
         // If we need pagination
-        pagination: {
-            el: '.swiper-pagination',
-        },
+
 
         // Navigation arrows
         navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
         },
+
+        breakpoints: {
+            576: {
+                pagination: {
+                    el: '.swiper-pagination',
+                },
+            }
+        }
+
     });
 
     const btnUp = document.querySelector('.footer__up');
@@ -57,10 +74,9 @@ $(document).ready(function () {
     $.fancybox.defaults.animationEffect = 'fade';
     $.fancybox.defaults.touch = false;
 
-    let setModalShow = true;
+    let setModalShow = false;
 
     window.addEventListener('scroll', function() {
-        console.log('scroll');
         if (($('.reviews__slide').offset().top < window.pageYOffset) && !setModalShow) {
             setTimeout(function() {
                 document.querySelector('.link-modal-email').click();
@@ -70,7 +86,7 @@ $(document).ready(function () {
         }
     })
 
-    if (window.matchMedia('max-width: 576px').media) {
+    if (window.matchMedia('(max-width: 576px)').matches) {
         let listHeaders = document.querySelectorAll('.list__header');
 
         listHeaders.forEach((e) => {
@@ -89,6 +105,23 @@ $(document).ready(function () {
                 }
             })
         })
+    }
+
+    if (document.querySelector('.section__more') && window.matchMedia('(max-width: 576px)').matches) {
+        let moreBtns = document.querySelectorAll('.section__more');
+
+        moreBtns.forEach(e => {
+            e.addEventListener('click', function() {
+                const prevItem = e.previousElementSibling;
+
+                prevItem.classList.add('active')
+                prevItem.style.height = prevItem.scrollHeight + 'px'
+                e.style.opacity = 0
+                e.style.pointerEvents = 'none'
+            })
+        })
+
+
     }
 
 });

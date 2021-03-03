@@ -155,10 +155,29 @@ body::-webkit-scrollbar-thumb {
       position: absolute; }
   .section__more {
     font-size: 13px;
-    line-height: 15;
+    line-height: 15px;
     text-decoration: underline;
     font-weight: 500;
-    cursor: pointer; }
+    cursor: pointer;
+    position: relative;
+    -webkit-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
+    display: none; }
+    .section__more::before {
+      content: '';
+      position: absolute;
+      bottom: 14px;
+      pointer-events: none;
+      width: 100%;
+      height: 206px;
+      z-index: 2;
+      -webkit-transition: all 0.2s;
+      -o-transition: all 0.2s;
+      transition: all 0.2s;
+      background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), color-stop(76.56%, #FFFFFF));
+      background: -o-linear-gradient(top, rgba(255, 255, 255, 0) 0%, #FFFFFF 76.56%);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 76.56%); }
   @media screen and (max-width: 1440px) {
     .section {
       padding: 0 120px; }
@@ -191,10 +210,18 @@ body::-webkit-scrollbar-thumb {
       .section__number {
         display: none; }
       .section__title {
-        font-size: 20px; } }
+        font-size: 20px;
+        line-height: 24px; }
+      .section__paragraphs {
+        display: block; }
+      .section__more {
+        display: block; } }
   @media screen and (max-width: 400px) {
     .section {
-      padding: 0 16px; } }
+      padding: 0 16px; }
+      .section__title {
+        font-size: 18px;
+        line-height: 22px; } }
 
 .button {
   padding: 24px 32px;
@@ -374,6 +401,9 @@ body.menu-active {
     opacity: 1; }
   body.menu-active main {
     pointer-events: none; }
+
+html {
+  scroll-behavior: smooth; }
 
 .menu {
   z-index: 2;
@@ -766,6 +796,17 @@ body.menu-active {
       .what__column:nth-child(2) {
         margin-left: 0;
         width: 100%; } }
+  @media screen and (max-width: 576px) {
+    .what__paragraphs {
+      height: 322px;
+      overflow: hidden;
+      pointer-events: none;
+      -webkit-transition: all 0.2s;
+      -o-transition: all 0.2s;
+      transition: all 0.2s;
+      display: block; }
+      .what__paragraphs.active {
+        pointer-events: all; } }
 
 .list {
   position: relative; }
@@ -900,6 +941,17 @@ body.menu-active {
         max-width: 300px;
         width: 100%;
         margin: 0 auto 30px; } }
+  @media screen and (max-width: 576px) {
+    .why__paragraphs {
+      height: 322px;
+      display: block;
+      overflow: hidden;
+      pointer-events: none;
+      -webkit-transition: all 0.2s;
+      -o-transition: all 0.2s;
+      transition: all 0.2s; }
+      .why__paragraphs.active {
+        pointer-events: all; } }
 
 .exp {
   position: relative; }
@@ -972,20 +1024,39 @@ body.menu-active {
         left: -10px;
         top: -3px; } }
   @media screen and (max-width: 576px) {
+    .exp__title {
+      margin-bottom: 34px; }
     .exp__columns {
       -webkit-box-orient: vertical;
       -webkit-box-direction: normal;
           -ms-flex-direction: column;
-              flex-direction: column; }
+              flex-direction: column;
+      height: 322px;
+      overflow-y: hidden;
+      pointer-events: none;
+      -webkit-transition: all 0.2s;
+      -o-transition: all 0.2s;
+      transition: all 0.2s; }
+      .exp__columns.active {
+        pointer-events: all; }
     .exp__paragraph {
       margin-bottom: 18px; }
+      .exp__paragraph::before {
+        width: 16px;
+        height: 16px;
+        left: -12px; }
     .exp__column {
       width: 100%;
-      margin-left: 0; }
-      .exp__column:first-child .exp__paragraph:last-child {
-        padding-bottom: 18px; }
-        .exp__column:first-child .exp__paragraph:last-child::after {
-          display: none; } }
+      margin-left: 0;
+      padding-left: 12px; }
+      .exp__column::before {
+        left: 8px; }
+      .exp__column:first-child {
+        padding-top: 3px; }
+        .exp__column:first-child .exp__paragraph:last-child {
+          padding-bottom: 18px; }
+          .exp__column:first-child .exp__paragraph:last-child::after {
+            display: none; } }
 
 .always {
   position: relative;
@@ -1128,6 +1199,19 @@ body.menu-active {
       margin-right: 16px; }
     .how__text {
       line-height: 19px; } }
+  @media screen and (max-width: 576px) {
+    .how__items {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column; }
+    .how__item {
+      width: 100%;
+      margin-bottom: 36px; }
+      .how__item:nth-child(3) {
+        margin-bottom: 36px; }
+    .how__img {
+      width: 46px; } }
 
 .reviews {
   margin-bottom: 110px;
@@ -1251,6 +1335,19 @@ body.menu-active {
         line-height: 19px; }
       .reviews__spec {
         margin-bottom: 20px; } }
+  @media screen and (max-width: 576px) {
+    .reviews__title {
+      margin-bottom: 40px; }
+    .reviews__img-wrap {
+      width: 92px;
+      height: 92px; }
+    .reviews__img-border {
+      width: 94px;
+      height: 94px; }
+    .reviews__slide {
+      padding-top: 70px; }
+    .reviews__content {
+      padding: 30px 22px 34px; } }
 
 .bb {
   margin-bottom: 78px; }
@@ -1411,7 +1508,8 @@ body.menu-active {
       margin: 34px auto 0;
       width: -webkit-fit-content;
       width: -moz-fit-content;
-      width: fit-content; } }
+      width: fit-content;
+      text-align: center; } }
 
 .f-modal {
   padding: 66px 44px 60px;
@@ -1455,6 +1553,23 @@ body.menu-active {
   .f-modal__btn {
     width: 100%;
     margin-bottom: 18px; }
+  @media screen and (max-width: 768px) {
+    .f-modal {
+      padding: 46px 24px 46px; }
+      .f-modal__input {
+        font-size: 20px;
+        line-height: 26px; }
+      .f-modal__input-wrap {
+        padding: 16px 20px;
+        width: 100%; }
+      .f-modal__desc {
+        margin-bottom: 30px; } }
+  @media screen and (max-width: 576px) {
+    .f-modal__input-wrap {
+      padding: 10px; }
+    .f-modal__input {
+      margin-left: 14px;
+      font-size: 18px; } }
 
 .e-modal {
   padding: 66px 44px 68px;
@@ -1483,3 +1598,8 @@ body.menu-active {
     font-size: 14px;
     line-height: 20px;
     max-width: 330px; }
+  @media screen and (max-width: 460px) {
+    .e-modal {
+      padding: 46px 24px 46px; }
+      .e-modal__link {
+        font-size: 18px; } }
