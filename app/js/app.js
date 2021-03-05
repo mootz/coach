@@ -4,6 +4,10 @@ $(document).ready(function () {
     let body = document.querySelector('body');
     let menuLinks = document.querySelectorAll('.menu__link')
 
+    if (document.querySelector('.wow')) {
+        new WOW().init();
+    }
+
     menuButton.addEventListener('click', function() {
         this.classList.toggle('active');
         menu.classList.toggle('active');
@@ -18,19 +22,19 @@ $(document).ready(function () {
         })
     })
 
-    $('.short__quest-title span').eq(0).addClass('active').fadeIn(1000);
+    $('.short__quest-title span').eq(0).addClass('active').fadeIn(400);
 
-    setInterval(blockAnimate, 5000);
+    setInterval(blockAnimate, 1000);
 
     function blockAnimate() {
         var length = $('.short__quest-title span').length - 1;
         $('.short__quest-title span').each(function(index) {
             if($(this).hasClass('active') && index != length) {
-                $(this).removeClass('active').fadeOut(1000).next('span').addClass('active').delay(1000).fadeIn(1000);
+                $(this).removeClass('active').fadeOut(400).next('span').addClass('active').delay(400).fadeIn(400);
                 return false;
             } else if (index == length) {
-                $(this).removeClass('active').fadeOut(1000);
-                $('.short__quest-title span').eq(0).addClass('active').delay(1000).fadeIn(1000);
+                $(this).removeClass('active').fadeOut(400);
+                $('.short__quest-title span').eq(0).addClass('active').delay(400).fadeIn(400);
                 return false;
             }
         });
@@ -65,11 +69,11 @@ $(document).ready(function () {
         window.scrollTo({top: 0, behavior: 'smooth'});
     })
 
-    $('.f-modal__input').inputmask({
-        mask: '+7 (999) 999-99-99',
-        showMaskOnHover: false,
-        placeholder: '  ',
-    });
+    // $('.f-modal__input').inputmask({
+    //     mask: '+7 (999) 999-99-99',
+    //     showMaskOnHover: false,
+    //     placeholder: '  ',
+    // });
 
     $.fancybox.defaults.animationEffect = 'fade';
     $.fancybox.defaults.touch = false;

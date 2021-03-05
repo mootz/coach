@@ -1,3 +1,4 @@
+@import url(node_modules/animate.css/animate.compat.css);
 @font-face {
   font-family: "GTWalsheimPro";
   font-style: normal;
@@ -69,6 +70,14 @@ input, textarea {
     border-color: red; }
   input:required:valid, textarea:required:valid {
     border-color: green; }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0; }
+
+input[type=number] {
+  -moz-appearance: textfield; }
 
 body {
   font-family: "GraphikLCG", -apple-system, BlinkMacSystemFont, Arial, sans-serif;
@@ -309,14 +318,8 @@ body::-webkit-scrollbar-thumb {
     .link {
       font-size: 16px; } }
 
-.page__title {
-  margin-bottom: 40px; }
-  @media screen and (max-width: 992px) {
-    .page__title {
-      margin-bottom: 30px; } }
-
 .header {
-  padding: 74px 80px 0;
+  padding: 24px 80px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -324,7 +327,10 @@ body::-webkit-scrollbar-thumb {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin: 0 auto; }
+  margin: 0 auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
   .header__logo {
     width: 108px; }
     .header__logo img {
@@ -907,7 +913,7 @@ html {
     margin-bottom: 54px; }
   .why__paragraph {
     margin-bottom: 26px; }
-    .why__paragraph span {
+    .why__paragraph a {
       font-weight: 600; }
     .why__paragraph:last-child {
       margin-bottom: 0; }

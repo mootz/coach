@@ -8,7 +8,6 @@ $system: -apple-system, BlinkMacSystemFont, Arial, sans-serif // System Font Fam
 $glcg: 'GraphikLCG', -apple-system, BlinkMacSystemFont, Arial, sans-serif // GraphikLCG Font Family
 $gtw: 'GTWalsheimPro', -apple-system, BlinkMacSystemFont, Arial, sans-serif // Manrope Font Family
 
-
 // Bootstrap compatible gutter variable => $gutter
 // $grid-gutter-width: 20px
 // $gutter: $grid-gutter-width
@@ -19,6 +18,8 @@ $gtw: 'GTWalsheimPro', -apple-system, BlinkMacSystemFont, Arial, sans-serif // M
 // @import 'node_modules/bootstrap/scss/mixins/_breakpoints.scss' // Bootstrap Breakpoints mixin
 // @import 'node_modules/bootstrap/scss/bootstrap-grid.scss' // Optional Bootstrap Grid
 // @import 'node_modules/bootstrap/scss/utilities/_sizing.scss' // Optional Bootstrap Utilites
+
+@import 'node_modules/animate.css/animate.compat.css'
 
 // FONTS LOAD SECTION
 
@@ -52,6 +53,14 @@ input, textarea
         border-color: red
     &:required:valid
         border-color: green
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button
+    -webkit-appearance: none
+    margin: 0
+
+input[type=number]
+    -moz-appearance: textfield
 
 body
     font-family: $glcg

@@ -35,11 +35,11 @@ body
                 position: absolute
                 left: 0
                 bottom: 0
-                
+
     &__number
         position: absolute
         left: 0
-        
+
         span
             position: relative
             transform: rotate(-90deg)
@@ -47,7 +47,7 @@ body
             font-family: "Open Sans", "GraphikLCG", -apple-system, BlinkMacSystemFont, Arial, sans-serif
             font-size: 12px
             font-weight: 600
-        
+
         &::before
             content: ''
             top: -100px
@@ -56,7 +56,7 @@ body
             width: 1px
             background: #000
             position: absolute
-            
+
     &__more
         font-size: 13px
         line-height: 15px
@@ -66,7 +66,7 @@ body
         position: relative
         transition: all 0.2s
         display: none
-        
+
         &::before
             content: ''
             position: absolute
@@ -77,58 +77,58 @@ body
             z-index: 2
             transition: all 0.2s
             background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 76.56%)
-            
+
 
     @media screen and (max-width: 1440px)
         padding: 0 120px
-        
+
         &__number
             left: 20px
-            
+
     @media screen and (max-width: 1200px)
         padding: 0 90px
         margin: 0 auto 100px
-        
+
         &__title
             font-size: 26px
-    
+
     @media screen and (max-width: 992px)
         padding: 0 50px
         margin-bottom: 70px
-        
+
         &__title
             font-size: 24px
-            
+
     @media screen and (max-width: 768px)
         padding: 0 36px
         margin-bottom: 60px
-        
+
         &__number
             left: 10px
-            
+
         &__title--underline
             padding-bottom: 20px
-        
+
     @media screen and (max-width: 576px)
         padding: 0 30px
         margin-bottom: 48px
-    
+
         &__number
             display: none
-            
+
         &__title
             font-size: 20px
             line-height: 24px
-            
+
         &__paragraphs
             display: block
-            
+
         &__more
             display: block
-        
+
     @media screen and (max-width: 400px)
         padding: 0 16px
-        
+
         &__title
             font-size: 18px
             line-height: 22px
@@ -168,13 +168,13 @@ body
 
     &:active
         background-color: darken(#F0EFEB, 20%)
-        
+
     @media screen and (max-width: 992px)
         padding: 16px 32px
-        
+
     @media screen and (max-width: 768px)
         padding: 20px 32px
-        
+
         &__arrow
             display: none
 
@@ -213,19 +213,15 @@ body
     @media screen and (max-width: 576px)
         font-size: 16px
 
-.page
-    &__title
-        margin-bottom: 40px
 
-        @media screen and (max-width: 992px)
-            margin-bottom: 30px
 
 .header
-    padding: 74px 80px 0
+    padding: 24px 80px 0
     display: flex
     max-width: 1440px
     justify-content: space-between
     margin: 0 auto
+    align-items: center
 
     &__logo
         width: 108px
@@ -264,13 +260,13 @@ body
 
             span:last-child
                 transform: translate3d(0,-3px,0) rotate(-225deg)
-                
+
     @media screen and (max-width: 1200px)
         padding: 40px
-        
+
     @media screen and (max-width: 992px)
         padding: 30px
-        
+
     @media screen and (max-width: 576px)
         padding: 20px
         align-items: center
@@ -291,16 +287,16 @@ body
 
     &.menu-active
         overflow: hidden
-        
+
         &::after
             opacity: 1
-            
+
         main
             pointer-events: none
 
 html
     scroll-behavior: smooth
-    
+
 .menu
     z-index: 2
     position: fixed
@@ -323,13 +319,13 @@ html
         overflow-y: auto
         &::-webkit-scrollbar
             width: 5px
-        
+
         &::-webkit-scrollbar-track
             background-color: #F1EBE8
-        
+
         &::-webkit-scrollbar-thumb
             background-color: darken($accent, 30%)
-        
+
     &__link
         padding: 30px 0
         text-transform: uppercase
@@ -347,21 +343,21 @@ html
 
         &:last-child
             border-bottom: 0
-            
+
     &__last-item
         margin-bottom: 20px
-        
+
     &__socials
         display: flex
         margin-top: auto
-    
+
     &__social
         &:nth-child(2)
             margin-left: 16px
             a
                 padding-bottom: 0
                 padding-top: 6px
-    
+
     &__social-link
         width: 24px
         height: 24px
@@ -370,28 +366,28 @@ html
         display: flex
         align-items: center
         justify-content: center
-        
+
         svg
             width: 100%
             height: 100%
-            
+
         path
             fill: #ffffff
-            
-    
+
+
     @media screen and (max-width: 1440px)
         &__link
             padding: 20px 0
-            
+
     @media screen and (max-width: 1200px)
         padding: 80px 70px 20px
-        
+
     @media screen and (max-width: 768px)
         width: 100%
-        
+
     @media screen and (max-width: 576px)
         padding: 60px 30px 20px
-        
+
     @media screen and (max-width: 350px)
         padding: 60px 13px 20px
 
@@ -411,7 +407,7 @@ html
 
     &__column:last-child
         width: 40%
-        
+
         img
             width: 100%
 
@@ -507,23 +503,23 @@ html
 
     .section__number
         bottom: 100px
-        
+
     &__mob-img
         display: none
-        
+
     @media screen and (max-width: 1440px)
         &__column:first-child
             width: calc(60% - 50px)
-            
+
     @media screen and (max-width: 1200px)
         margin-top: 48px
-        
+
         &__title
             font-size: 38px
-            
+
         &__subtitle
             margin-bottom: 36px
-            
+
         &__target
             font-size: 26px
             margin-bottom: 50px
@@ -531,40 +527,40 @@ html
     @media screen and (max-width: 1100px)
         &__column:first-child
             width: calc(54% - 30px)
-            
+
         &__column:nth-child(2)
             width: 46%
-            
+
     @media screen and (max-width: 992px)
         margin-bottom: 70px
-        
+
         &__column:first-child
             width: calc(60% - 30px)
-            
+
         &__column:nth-child(2)
             width: 40%
-            
+
         &__title
             font-size: 34px
-            
+
         &__subtitle
             margin-bottom: 20px
-            
+
         &__target
             font-size: 22px
             line-height: 28px
             margin-bottom: 26px
-            
+
         &__item
             line-height: 18px
-            
+
         &__quest
             margin-top: 60px
-            
+
     @media screen and (max-width: 768px)
         margin-top: 20px
         margin-bottom: 60px
-        
+
         &__column:nth-child(2)
             display: none
 
@@ -575,48 +571,48 @@ html
             display: block
             max-width: 300px
             margin: 0 auto 30px
-            
+
             img
                 width: 100%
-                
+
         &__title
             line-height: 40px
-            
+
         &__target
             max-width: 100%
             text-align: center
-            
+
         .button
             margin: 20px auto 0
-            
+
         &__quest-title
             font-size: 24px
             height: 36px
-        
+
         &__quest
             margin-top: 30px
-            
+
         &__list
             width: fit-content
             margin: 0 auto
-            
+
     @media screen and (max-width: 576px)
         margin-bottom: 48px
-        
+
         &__title
             font-size: 28px
             margin-bottom: 2px
             line-height: 34px
-            
+
         &__quest
             margin-top: 46px
             padding-top: 20px
-            
+
         &__quest-title
             font-size: 18px
             line-height: 18px
             margin-bottom: 16px
-        
+
     @media screen and (max-width: 450px)
         &__target
             font-size: 20px
@@ -625,7 +621,7 @@ html
 .paragraph
     font-size: 16px
     line-height: 22px
-    
+
     @media screen and (max-width: 1100px)
         font-size: 14px
         line-height: 20px
@@ -639,7 +635,7 @@ html
         width: 460px
         display: flex
         flex-shrink: 0
-        
+
         img
             width: 100%
 
@@ -672,46 +668,46 @@ html
 
     .section__number
         bottom: 98px
-        
-        
+
+
     @media screen and (max-width: 1440px)
         &__column:nth-child(2)
             margin-left: 60px
-            
+
     @media screen and (max-width: 1200px)
         &__column:first-child
             width: 370px
-            
+
         &__column:nth-child(2)
             &::after
                 display: none
-                
+
     @media screen and (max-width: 1100px)
         &__column:nth-child(2)
             margin-left: 30px
-            
+
         &__column:first-child
             width: 360px
-            
+
         &__paragraph
             margin-bottom: 14px
-            
+
     @media screen and (max-width: 992px)
         &__column:first-child
             width: 304px
-            
+
     @media screen and (max-width: 768px)
         flex-direction: column
-        
+
         &__column:first-child
             width: 100%
             max-width: 400px
             margin: 0 auto 32px
-            
+
         &__column:nth-child(2)
             margin-left: 0
             width: 100%
-            
+
     @media screen and (max-width: 576px)
         &__paragraphs
             height: 322px
@@ -719,11 +715,11 @@ html
             pointer-events: none
             transition: all 0.2s
             display: block
-            
+
             &.active
                 pointer-events: all
-            
-    
+
+
 
 .list
     position: relative
@@ -766,44 +762,44 @@ html
 
     .section__number
         bottom: 96px
-        
+
     @media screen and (max-width: 992px)
         &__item
             width: calc(50% - 14px)
-            
+
         &__header
             font-size: 20px
-            
+
     @media screen and (max-width: 768px)
         &__items
             flex-direction: column
-            
+
         &__item
             width: 100%
             margin-bottom: 30px
             max-width: 100%
-            
+
             &:nth-child(1),
             &:nth-child(2)
                 margin-bottom: 30px
-                
+
     @media screen and (max-width: 576px)
         &__paragraph
             height: 0
             overflow: hidden
             transition: all 0.2s
-            
-            
-    
+
+
+
         &__header
             font-size: 18px
             margin-bottom: 10px
             cursor: pointer
-            
+
             &::before
                 margin-top: 2px
                 transition: all 0.2s
-                
+
             &.active
                 &::before
                     transform: rotate(90deg)
@@ -816,7 +812,7 @@ html
         display: flex
         width: 460px
         flex-shrink: 0
-        
+
         img
             width: 100%
 
@@ -830,7 +826,7 @@ html
     &__paragraph
         margin-bottom: 26px
 
-        span
+        a
             font-weight: 600
 
         &:last-child
@@ -838,22 +834,22 @@ html
 
     .section__number
         bottom: 76px
-        
-        
+
+
     @media screen and (max-width: 1440px)
         &__column:first-child
             margin-right: 60px
-            
+
     @media screen and (max-width: 1200px)
         &__title
             margin-bottom: 30px
-            
+
         &__column:first-child
             margin-right: 40px
-            
+
         &__paragraph
             margin-bottom: 20px
-            
+
     @media screen and (max-width: 1100px)
         &__column:nth-child(2)
             width: 370px
@@ -861,18 +857,18 @@ html
     @media screen and (max-width: 992px)
         &__column:first-child
             margin-right: 30px
-            
+
         &__column:nth-child(2)
             width: 300px
-            
+
     @media screen and (max-width: 768px)
         flex-direction: column-reverse
-        
+
         &__column:nth-child(2)
             max-width: 300px
             width: 100%
             margin: 0 auto 30px
-            
+
     @media screen and (max-width: 576px)
         &__paragraphs
             height: 322px
@@ -880,7 +876,7 @@ html
             overflow: hidden
             pointer-events: none
             transition: all 0.2s
-            
+
             &.active
                 pointer-events: all
 
@@ -944,62 +940,62 @@ html
 
     .section__number
         bottom: 96px
-    
+
     @media screen and (max-width: 1100px)
         &__column
             width: calc(50% - 20px)
-            
+
         &__paragraph
             padding-left: 30px
-            
+
     @media screen and (max-width: 768px)
         &__paragraph
             padding-left: 18px
-            
+
             &::before
                 width: 20px
                 height: 20px
                 left: -10px
                 top: -3px
-                
+
     @media screen and (max-width: 576px)
         &__title
             margin-bottom: 34px
-        
+
         &__columns
             flex-direction: column
             height: 322px
             overflow-y: hidden
             pointer-events: none
             transition: all 0.2s
-        
+
             &.active
                 pointer-events: all
-            
+
         &__paragraph
             margin-bottom: 18px
-            
+
             &::before
                 width: 16px
                 height: 16px
                 left: -12px
-            
+
         &__column
             width: 100%
             margin-left: 0
             padding-left: 12px
-            
+
             &::before
                 left: 8px
-            
+
             &:first-child
                 padding-top: 3px
                 .exp__paragraph:last-child
                     padding-bottom: 18px
-                
+
                     &::after
                         display: none
-            
+
 
 .always
     position: relative
@@ -1009,7 +1005,7 @@ html
     &__column:first-child
         width: 461px
         flex-shrink: 0
-        
+
         img
             width: 100%
 
@@ -1040,57 +1036,57 @@ html
 
     .section__number
         bottom: 170px
-        
+
     @media screen and (max-width: 1440px)
         &__column:nth-child(2)
             margin-left: 30px
-            
+
     @media screen and (max-width: 1100px)
         &__column:first-child
             width: 390px
-            
+
         &__column:nth-child(2)
             margin-left: 20px
-            
+
         &__title
             padding-left: 20px
             margin-bottom: 30px
-            
+
         &__item
             margin-bottom: 18px
-            
+
             &::before
                 margin-right: 14px
-                
+
     @media screen and (max-width: 992px)
         &__column:first-child
             width: 272px
-            
+
         &__title
             margin-bottom: 20px
-            
+
         &__item
             font-size: 14px
             line-height: 18px
             margin-bottom: 14px
-            
+
             &::before
                 margin-top: 6px
-            
+
     @media screen and (max-width: 768px)
         flex-direction: column
-        
+
         &__column:first-child
             width: 100%
             max-width: 300px
             margin: 0 auto 30px
-            
+
         &__column:nth-child(2)
             margin-left: 0
-            
+
         &__title
             padding-left: 0
-            
+
 
 .how
     position: relative
@@ -1117,7 +1113,7 @@ html
         width: 70px
         margin-right: 40px
         flex-shrink: 0
-    
+
         img
             width: 100%
 
@@ -1127,51 +1123,51 @@ html
 
     .section__number
         bottom: 92px
-        
+
     @media screen and (max-width: 1200px)
         &__title
             margin-bottom: 50px
-            
+
         &__img
             width: 60px
             margin-right: 30px
-            
+
     @media screen and (max-width: 992px)
         &__text
             font-size: 14px
-            
+
         &__img
             width: 50px
             margin-right: 26px
-            
+
         &__item
             margin-bottom: 50px
-            
+
     @media screen and (max-width: 768px)
         &__title
             margin-bottom: 30px
-            
+
         &__item
             width: calc(50% - 18px)
-            
+
         &__img
             width: 40px
             margin-right: 16px
-            
+
         &__text
             line-height: 19px
-            
+
     @media screen and (max-width: 576px)
         &__items
             flex-direction: column
-            
+
         &__item
             width: 100%
             margin-bottom: 36px
-            
+
             &:nth-child(3)
                 margin-bottom: 36px
-            
+
         &__img
             width: 46px
 
@@ -1295,39 +1291,39 @@ html
 
     .section__number
         bottom: 90px
-        
+
     @media screen and (max-width: 1200px)
         &__content
             max-width: 800px
-            
+
     @media screen and (max-width: 992px)
         margin-bottom: 60px
-        
+
     @media screen and (max-width: 768px)
         margin-bottom: 30px
-        
+
         &__text
             font-size: 14px
             line-height: 19px
-            
+
         &__spec
             margin-bottom: 20px
-            
+
     @media screen and (max-width: 576px)
         &__title
             margin-bottom: 40px
-            
+
         &__img-wrap
             width: 92px
             height: 92px
-            
+
         &__img-border
             width: 94px
             height: 94px
-            
+
         &__slide
             padding-top: 70px
-            
+
         &__content
             padding: 30px 22px 34px
 
@@ -1336,7 +1332,7 @@ html
 
     &__button
         margin: 0 auto
-        
+
 
 .footer
     background: #B2B6A8
@@ -1353,7 +1349,7 @@ html
     &__list,
     &__socials
         margin-right: 120px
-        
+
         &:last-child
             margin-right: 0
 
@@ -1420,77 +1416,77 @@ html
         font-size: 14px
         line-height: 14px
         margin-left: 16px
-        
+
     &__mob-row
         display: none
-        
+
     @media screen and (max-width: 1300px)
         &__list,
         &__socials
             margin-right: 80px
-            
+
     @media screen and (max-width: 1200px)
         &__list,
         &__socials
             margin-right: 60px
-            
+
     @media screen and (max-width: 1100px)
         &__list,
         &__socials
             margin-right: 36px
-            
+
     @media screen and (max-width: 992px)
         &__wrap
             padding: 60px 40px 34px
-            
+
         &__up
             top: 18px
             right: 36px
-            
+
     @media screen and (max-width: 768px)
         &__wrap
             padding: 36px 48px 30px
-        
+
         &__row
             flex-direction: column
             align-items: center
             justify-content: center
-            
+
             .footer__socials
                 display: none
-                
+
         &__item
             text-align: center
-            
+
         &__list
             margin-right: 0
             margin-bottom: 24px
-            
+
         &__up
             display: none
-            
+
         &__mob-row
             display: flex
             justify-content: space-between
             flex-direction: row
             margin-top: 24px
-            
+
             .footer__socials
                 display: flex
                 margin-right: 0
                 width: fit-content
-                
+
             .footer__up
                 display: flex
                 position: relative
                 top: 0
                 right: 0
-                
+
         &__rights
             margin: 34px auto 0
             width: fit-content
             text-align: center
-    
+
 .f-modal
     padding: 66px 44px 60px
     max-width: 430px
@@ -1531,33 +1527,33 @@ html
     &__btn
         width: 100%
         margin-bottom: 18px
-        
+
     @media screen and (max-width: 768px)
         padding: 46px 24px 46px
-        
+
         &__input
             font-size: 20px
             line-height: 26px
-    
+
         &__input-wrap
             padding: 16px 20px
             width: 100%
-            
+
         &__desc
             margin-bottom: 30px
 
     @media screen and (max-width: 576px)
         &__input-wrap
             padding: 10px
-            
+
         &__input
             margin-left: 14px
             font-size: 18px
-    
+
 .e-modal
     padding: 66px 44px 68px
     display: none
-    
+
     &__label
         font-size: 20px
         line-height: 14px
@@ -1565,7 +1561,7 @@ html
         font-family: $gtw
         margin-bottom: 32px
         color: #74786b
-        
+
     &__link
         text-decoration-line: underline
         font-size: 23px
@@ -1575,21 +1571,21 @@ html
         font-weight: 600
         margin-bottom: 32px
         display: block
-        
+
         &:focus,
         &:active
             outline: 0
-        
+
     &__desc
         letter-spacing: 0.02em
         font-size: 14px
         line-height: 20px
         max-width: 330px
-        
-        
+
+
     @media screen and (max-width: 460px)
         padding: 46px 24px 46px
-        
+
         &__link
             font-size: 18px
 
